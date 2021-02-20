@@ -1,0 +1,29 @@
+body {
+  background: linear-gradient(#e66465, #9198e5);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+}
+
+.main {
+  height: 60vh;
+  background-color: white;
+  margin: 150px 240px;
+  display: flex;
+  flex: 0;
+  align-content: center;
+  border-radius: 15px;
+
+  .leftSide {
+    margin: 20px, 20px;
+    flex: 1;
+
+    .image {
+      background-image: url("./image.png");
+    }
+  }
+  .rightSide {
+    margin: 20px, 20px;
+    flex: 1;
+  }
+}
