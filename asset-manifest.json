@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/communicator/static/css/main.63a423eb.chunk.css",
+    "main.js": "/communicator/static/js/main.bcca0fb6.chunk.js",
+    "main.js.map": "/communicator/static/js/main.bcca0fb6.chunk.js.map",
+    "runtime-main.js": "/communicator/static/js/runtime-main.84fcf8cb.js",
+    "runtime-main.js.map": "/communicator/static/js/runtime-main.84fcf8cb.js.map",
+    "static/js/2.768a2705.chunk.js": "/communicator/static/js/2.768a2705.chunk.js",
+    "static/js/2.768a2705.chunk.js.map": "/communicator/static/js/2.768a2705.chunk.js.map",
+    "static/js/3.3de8e3c0.chunk.js": "/communicator/static/js/3.3de8e3c0.chunk.js",
+    "static/js/3.3de8e3c0.chunk.js.map": "/communicator/static/js/3.3de8e3c0.chunk.js.map",
+    "index.html": "/communicator/index.html",
+    "static/css/main.63a423eb.chunk.css.map": "/communicator/static/css/main.63a423eb.chunk.css.map",
+    "static/js/2.768a2705.chunk.js.LICENSE.txt": "/communicator/static/js/2.768a2705.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.84fcf8cb.js",
+    "static/js/2.768a2705.chunk.js",
+    "static/css/main.63a423eb.chunk.css",
+    "static/js/main.bcca0fb6.chunk.js"
+  ]
+}
