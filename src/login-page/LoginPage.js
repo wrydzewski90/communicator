@@ -12,11 +12,11 @@ function LoginPage() {
                 <div className="image"></div>
             </div>
             <div className="rightSide">
-               <form action="/">
+                <form action="/">
                     <p className="login-title">member login</p>
                     <div className="input-wrapper">
                         <input
-                            type="text"
+                            type="email"
                             name="email"
                             placeholder="Email"
                             className="login-email"
@@ -37,12 +37,10 @@ function LoginPage() {
                         >
                             {message}
                         </button>
-                      
                     </div>
-                      </form>
-                </div>
+                </form>
             </div>
-       
+        </div>
     );
 }
 
