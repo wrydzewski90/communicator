@@ -94,6 +94,27 @@ body {
             .login-button:hover {
                 background-color: #666;
             }
+            .remember-wrapper {
+                text-align: center;
+
+                .forgot {
+                    color: rgb(145, 141, 141);
+                    text-transform: capitalize;
+                    font-size: 13px;
+                    line-height: 1.5;
+                }
+                .userpass {
+                    color: #666;
+                    text-transform: capitalize;
+                    font-size: 13px;
+                    line-height: 1.5;
+                    transition: 0.2s;
+                    cursor: pointer;
+                }
+                .userpass:hover {
+                    color: #6aec54;
+                }
+            }
         }
     }
 }
