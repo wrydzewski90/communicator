@@ -1,24 +1,26 @@
 $medium-res: 1050px;
 
 body {
-    background: linear-gradient(#e66465, #9198e5);
-    height: 100vh;
-    width: 100vw;
-    margin: 0 auto;
-    background-repeat: no-repeat;
-    display: flex;
-    flex: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    overflow: hidden;
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
 }
 
-.main {
+.container {
+  background: linear-gradient(#e66465, #9198e5);
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  display: flex;
+  flex: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  .main {
     min-height: 60vh;
     width: 968px;
     background-color: white;
-    margin: 150px 240px;
+    margin: 50px 50px;
     display: flex;
     flex: 0;
     align-content: center;
@@ -26,86 +28,87 @@ body {
     border-radius: 15px;
 
     .leftSide {
-        margin: 20px, 20px;
-        flex: 1;
+      margin: 20px, 20px;
+      flex: 1;
 
-        .image {
-            background-image: url("./image.png");
-            margin: 20px auto 0 50px;
-            width: 80%;
-            height: 80%;
-            background-repeat: no-repeat;
-        }
+      .image {
+        background-image: url("./image.png");
+        margin: 20px auto 0 50px;
+        width: 80%;
+        height: 80%;
+        background-repeat: no-repeat;
+      }
     }
     .rightSide {
-        margin: 20px, 20px;
-        flex: 1;
+      margin: 20px, 20px;
+      flex: 1;
 
-        .login-title {
-            font-size: 24px;
-            text-transform: capitalize;
-            font-weight: bold;
-            color: #333;
-            line-height: 1.2;
-            text-align: center;
-            width: 100%;
-            display: block;
-        }
+      .login-title {
+        font-size: 24px;
+        text-transform: capitalize;
+        font-weight: bold;
+        color: #333;
+        line-height: 1.2;
+        text-align: center;
+        width: 100%;
+        display: block;
+      }
 
-        .input-wrapper {
-            margin-top: 50px;
+      .input-wrapper {
+        margin-top: 50px;
 
-            .login-email,
-            .login-password {
-                font-size: 15px;
-                font-weight: bold;
-                line-height: 1.5;
-                color: #666;
-                background-color: #e6e6e6;
-                display: block;
-                padding: 10px;
-                margin: 20px auto;
-                padding: 10px 20px;
-                border-radius: 30px;
-                border: none;
-            }
+        .login-email,
+        .login-password {
+          font-size: 15px;
+          font-weight: bold;
+          line-height: 1.5;
+          color: #666;
+          background-color: #e6e6e6;
+          display: block;
+          padding: 10px;
+          margin: 20px auto;
+          padding: 10px 20px;
+          border-radius: 30px;
+          border: none;
         }
-        .login-button {
-            font-size: 15px;
-            font-weight: bold;
-            line-height: 1.5;
-            color: #fff;
-            text-transform: uppercase;
-            height: 50px;
-            background-color: #57b846;
-            border-radius: 25px;
-            width: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 25px;
-            outline: none;
-            border: none;
-            cursor: pointer;
-            margin: 10px auto;
-            transition: 0.4s;
-        }
-        .login-button:hover {
-            background-color: #666;
-        }
+      }
+      .login-button {
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 1.5;
+        color: #fff;
+        text-transform: uppercase;
+        height: 50px;
+        background-color: #57b846;
+        border-radius: 25px;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 25px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        margin: 10px auto;
+        transition: 0.4s;
+      }
+      .login-button:hover {
+        background-color: #666;
+      }
     }
+  }
 }
 
 @media all and (max-width: $medium-res) {
-    .main {
-        height: 320px;
-        width: 300px;
-        display: flex;
-        flex: 0;
-        margin: 50px;
+  .main {
+    height: 320px;
+    width: 300px;
+    display: flex;
+    flex: 0;
+    margin: 50px;
 
-        .leftSide {
-            display: none;
-        }
+    .leftSide {
+      display: none;
     }
+  }
 }
