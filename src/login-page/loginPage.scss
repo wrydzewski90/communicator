@@ -1,27 +1,21 @@
-// Small devices (landscape phones, 576px and up)
-$col-sm: "only screen and (min-width: 576px)";
-// Medium devices (tablets, 768px and up)
-$col-md: "only screen and (min-width: 768px)";
-// Large devices (desktops, 992px and up)
-$col-lg: "only screen and (min-width: 992px)";
-// Extra large devices (large desktops, 1200px and up)
-$col-xl: "only screen and (min-width: 1200px)";
+$medium-res: 1050px;
 
 body {
     background: linear-gradient(#e66465, #9198e5);
-    min-height: 68%;
+    height: 100vh;
     width: 100vw;
-    margin: 0;
+    margin: 0 auto;
     background-repeat: no-repeat;
     display: flex;
     flex: wrap;
     justify-content: center;
     align-items: center;
     padding: 15px;
+    overflow: hidden;
 }
 
 .main {
-    height: 60vh;
+    min-height: 60vh;
     width: 968px;
     background-color: white;
     margin: 150px 240px;
@@ -38,10 +32,9 @@ body {
         .image {
             background-image: url("./image.png");
             margin: 20px auto 0 50px;
-            width: 100%;
-            height: 100%;
+            width: 80%;
+            height: 80%;
             background-repeat: no-repeat;
-          
         }
     }
     .rightSide {
@@ -99,6 +92,20 @@ body {
         }
         .login-button:hover {
             background-color: #666;
+        }
+    }
+}
+
+@media all and (max-width: $medium-res) {
+    .main {
+        height: 320px;
+        width: 300px;
+        display: flex;
+        flex: 0;
+        margin: 50px;
+
+        .leftSide {
+            display: none;
         }
     }
 }
