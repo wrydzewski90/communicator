@@ -1,4 +1,4 @@
-$medium-res: 1050px;
+$medium-res: 900px;
 
 body {
   margin: 0px;
@@ -7,22 +7,19 @@ body {
 }
 
 .container {
+  height: 100vh;
   background: linear-gradient(#e66465, #9198e5);
-  margin: 0 auto;
   background-repeat: no-repeat;
   display: flex;
-  flex: wrap;
   justify-content: center;
   align-items: center;
-  padding: 15px;
 
   .main {
-    min-height: 60vh;
+    height: 400px;
     width: 968px;
     background-color: white;
     margin: 50px 50px;
     display: flex;
-    flex: 0;
     align-content: center;
     justify-content: center;
     border-radius: 15px;
@@ -100,15 +97,15 @@ body {
 }
 
 @media all and (max-width: $medium-res) {
-  .main {
-    height: 320px;
-    width: 300px;
-    display: flex;
-    flex: 0;
-    margin: 50px;
+  .container {
+    .main {
+      height: 320px;
+      width: 400px;
+      margin: 50px;
 
-    .leftSide {
-      display: none;
+      .leftSide {
+        display: none;
+      }
     }
   }
 }
