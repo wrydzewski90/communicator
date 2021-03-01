@@ -7,38 +7,44 @@ function LoginPage() {
         setMessage("login succes!");
     };
     return (
-        <div className="main">
-            <div className="leftSide">
-                <div className="image"></div>
-            </div>
-            <div className="rightSide">
-                <form action="/">
-                    <p className="login-title">member login</p>
-                    <div className="input-wrapper">
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                            className="login-email"
-                        />
+        <div className="container">
+            <div className="main">
+                <div className="leftSide">
+                    <div className="image"></div>
+                </div>
+                <div className="rightSide">
+                    <form action="/">
+                        <p className="login-title">member login</p>
+                        <div className="input-wrapper">
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Email"
+                                className="login-email"
+                            />
 
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            className="login-password"
-                            required
-                        />
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                className="login-password"
+                                required
+                            />
 
-                        <button
-                            onClick={firstclick}
-                            type="submit"
-                            name="login"
-                            className="login-button"
-                        >
-                            {message}
-                        </button>
+                            <button
+                                onClick={firstclick}
+                                type="submit"
+                                name="login"
+                                className="login-button"
+                            >
+                                {message}
+                            </button>
+                        </div>
+                    </form>
+                    <div className="remember-wrapper">
+                        <span className="forgot">forgot </span>
+                        <span className="userpass">username / password?</span>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     );
