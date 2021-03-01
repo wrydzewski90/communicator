@@ -9,20 +9,21 @@ body {
   height: 100vh;
   background: linear-gradient(#e66465, #9198e5);
   background-repeat: no-repeat;
-  display: flex;
   justify-content: center;
   align-items: center;
 
   .leftSide {
     height: 100%;
+    min-width: 220px;
+    max-width: 220px;
     flex: 1;
-    background-color: blueviolet;
+    background-color: #3f103f;
   }
 
   .rightSide {
     height: 100%;
     flex: 5;
-    background-color: cadetblue;
+    background-color: #e5e5e5;
     display: flex;
     flex-direction: column;
   }
@@ -31,6 +32,18 @@ body {
     width: 100%;
     flex: 1;
     background-color: chartreuse;
+
+    .top {
+      min-height: 60px;
+      max-height: 60px;
+      background-color: darkblue;
+    }
+
+    .bottom {
+      min-height: 35px;
+      max-height: 35px;
+      background-color: darkolivegreen;
+    }
   }
 
   .messagesField {
@@ -40,8 +53,12 @@ body {
   }
 
   .typeField {
-    width: 100%;
+    min-height: 105px;
+    max-height: 105px;
     flex: 2;
     background-color: crimson;
+    border-radius: 15px;
+    border: 1px solid gray;
+    margin: 10px;
   }
 }
