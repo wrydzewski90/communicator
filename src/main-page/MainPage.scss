@@ -1,0 +1,47 @@
+body {
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  height: 100vh;
+  background: linear-gradient(#e66465, #9198e5);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .leftSide {
+    height: 100%;
+    flex: 1;
+    background-color: blueviolet;
+  }
+
+  .rightSide {
+    height: 100%;
+    flex: 5;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    width: 100%;
+    flex: 1;
+    background-color: chartreuse;
+  }
+
+  .messagesField {
+    width: 100%;
+    flex: 8;
+    background-color: coral;
+  }
+
+  .typeField {
+    width: 100%;
+    flex: 2;
+    background-color: crimson;
+  }
+}
