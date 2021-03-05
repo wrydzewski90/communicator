@@ -70,6 +70,10 @@ body {
                     border-radius: 30px;
                     border: none;
                 }
+                .login-email,
+                .login-password:focus {
+                    outline: none;
+                }
             }
             .login-button {
                 font-size: 15px;
@@ -131,5 +135,4 @@ body {
             }
         }
     }
-  }
 }
