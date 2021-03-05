@@ -1,11 +1,42 @@
 import "./loginPage.scss";
 import { useState } from "react";
 
-function LoginPage() {
-    const [message, setMessage] = useState("login");
-    const firstclick = () => {
-        setMessage("login succes!");
+function LoginPage({ onSucces }) {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+
+    const login = () => {
+        setLoading(true);
+        fetch("https://open.rocket.chat/api/v1/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                user: username,
+                password: password,
+            }),
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((response) => {
+                if (response.status === "error") {
+                    console.log(response.error);
+                    setError(response.error);
+                }
+
+                if (response.status === "success") {
+                    onSucces(response.data);
+                }
+
+                setLoading(false);
+            });
+       
     };
+
     return (
         <div className="container">
             <div className="main">
@@ -13,7 +44,7 @@ function LoginPage() {
                     <div className="image"></div>
                 </div>
                 <div className="rightSide">
-                    <form action="/">
+                    <form>
                         <p className="login-title">member login</p>
                         <div className="input-wrapper">
                             <input
@@ -21,23 +52,29 @@ function LoginPage() {
                                 name="email"
                                 placeholder="Email"
                                 className="login-email"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
                             />
 
                             <input
                                 type="password"
                                 placeholder="Password"
                                 className="login-password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                                 required
                             />
 
-                            <button
-                                onClick={firstclick}
+                            <div
+                                onClick={() => login()}
                                 type="submit"
                                 name="login"
                                 className="login-button"
                             >
-                                {message}
-                            </button>
+                                login
+                            </div>
+                            {loading && <div>Loading...</div>}
+                            {error && <div>{error}</div>}
                         </div>
                     </form>
                     <div className="remember-wrapper">

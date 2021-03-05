@@ -56,47 +56,6 @@ body {
       .input-wrapper {
         margin-top: 50px;
 
-        .login-email,
-        .login-password {
-          font-size: 15px;
-          font-weight: bold;
-          line-height: 1.5;
-          color: #666;
-          background-color: #e6e6e6;
-          display: block;
-          padding: 10px;
-          margin: 20px auto;
-          padding: 10px 20px;
-          border-radius: 30px;
-          border: none;
-        }
-      }
-      .login-button {
-        font-size: 15px;
-        font-weight: bold;
-        line-height: 1.5;
-        color: #fff;
-        text-transform: uppercase;
-        height: 50px;
-        background-color: #57b846;
-        border-radius: 25px;
-        width: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 25px;
-        outline: none;
-        border: none;
-        cursor: pointer;
-        margin: 10px auto;
-        transition: 0.4s;
-      }
-      .login-button:hover {
-        background-color: #666;
-      }
-      .remember-wrapper {
-        text-align: center;
-
         .forgot {
           color: rgb(145, 141, 141);
           text-transform: capitalize;
@@ -130,5 +89,4 @@ body {
         display: none;
       }
     }
-  }
 }
