@@ -13,6 +13,7 @@ body {
   background-repeat: no-repeat;
   justify-content: center;
   align-items: center;
+  display: flex;
 
   .leftSide {
     height: 100%;
@@ -32,7 +33,7 @@ body {
     }
   }
 
-  .rightSide-main {
+  .rightSide {
     height: 100%;
     flex: 1;
     background-color: #e5e5e5;
