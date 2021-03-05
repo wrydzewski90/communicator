@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
 body {
   margin: 0px;
   height: 100vh;
   width: 100vw;
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .container {
@@ -14,15 +16,25 @@ body {
 
   .leftSide {
     height: 100%;
-    min-width: 220px;
-    max-width: 220px;
-    flex: 1;
+    width: 220px;
     background-color: #3f103f;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: white;
+    padding-left: 15px;
+
+    .channels {
+      padding-left: 15px;
+    }
   }
 
   .rightSide {
     height: 100%;
-    flex: 5;
+    flex: 1;
     background-color: #e5e5e5;
     display: flex;
     flex-direction: column;
@@ -30,35 +42,42 @@ body {
 
   .header {
     width: 100%;
-    flex: 1;
     background-color: chartreuse;
 
     .top {
-      min-height: 60px;
-      max-height: 60px;
+      height: 60px;
       background-color: darkblue;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 22px;
+      letter-spacing: 0px;
+      text-align: left;
     }
 
     .bottom {
-      min-height: 35px;
-      max-height: 35px;
+      height: 35px;
       background-color: darkolivegreen;
     }
   }
 
   .messagesField {
     width: 100%;
-    flex: 8;
+    flex: 1;
     background-color: coral;
   }
 
   .typeField {
-    min-height: 105px;
-    max-height: 105px;
-    flex: 2;
-    background-color: crimson;
+    height: 105px;
     border-radius: 15px;
     border: 1px solid gray;
     margin: 10px;
+    display: flex;
+
+    .typeMessage {
+      margin: 10px 20px 0px 20px;
+      height: 40px;
+      flex: 1;
+    }
   }
 }
