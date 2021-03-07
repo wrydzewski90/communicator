@@ -1,5 +1,5 @@
-import "./loginPage.scss";
 import { useState } from "react";
+import styles from"./loginPage.module.scss";
 
 function LoginPage({ onSucces }) {
     const [username, setUsername] = useState("");
@@ -33,25 +33,24 @@ function LoginPage({ onSucces }) {
                 }
 
                 setLoading(false);
-            });
-       
+            });    
     };
 
     return (
-        <div className="container">
-            <div className="main">
-                <div className="leftSide">
-                    <div className="image"></div>
+        <div className={styles.container}>
+            <div className={styles.main}>
+                <div className={styles.leftSide}>
+                    <div className={styles.image}></div>
                 </div>
-                <div className="rightSide">
+                <div className={styles.rightSide}>
                     <form>
-                        <p className="login-title">member login</p>
-                        <div className="input-wrapper">
+                        <p className={styles.loginTitle}>member login</p>
+                        <div className={styles.inputWrapper}>
                             <input
                                 type="email"
                                 name="email"
                                 placeholder="Email"
-                                className="login-email"
+                                className={styles.loginEmail}
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                             />
@@ -59,7 +58,7 @@ function LoginPage({ onSucces }) {
                             <input
                                 type="password"
                                 placeholder="Password"
-                                className="login-password"
+                                className={styles.loginPassword}
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
@@ -69,7 +68,7 @@ function LoginPage({ onSucces }) {
                                 onClick={() => login()}
                                 type="submit"
                                 name="login"
-                                className="login-button"
+                                className={styles.loginButton}
                             >
                                 login
                             </div>
@@ -77,9 +76,9 @@ function LoginPage({ onSucces }) {
                             {error && <div>{error}</div>}
                         </div>
                     </form>
-                    <div className="remember-wrapper">
-                        <span className="forgot">forgot </span>
-                        <span className="userpass">username / password?</span>
+                    <div className={styles.rememberWrapper}>
+                        <span className={styles.forgot}>forgot </span>
+                        <span className={styles.userpass}>username / password?</span>
                     </div>
                 </div>
             </div>
