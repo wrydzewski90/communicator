@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./MainPage.module.scss";
 import ChannelsList from "./ChannelsList";
+import Messages from "./Messages";
 
 
 function MainPage({userData}) {
@@ -24,8 +25,11 @@ function MainPage({userData}) {
           <div className={styles.bottom}></div>
         </div>
         <div className={styles.messagesField}>
-          Current channel: 
-          {currentChannelId}
+          <Messages 
+            channelId={currentChannelId} 
+            token={userData.authToken}
+            userId={userData.userId}
+          />
         </div>
         <div className={styles.typeField}>
           <input
