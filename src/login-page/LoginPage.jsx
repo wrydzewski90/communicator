@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from"./loginPage.module.scss";
+import {API_URL} from "../api.js";
 
 function LoginPage({ onSucces }) {
     const [username, setUsername] = useState("");
@@ -9,7 +10,7 @@ function LoginPage({ onSucces }) {
 
     const login = () => {
         setLoading(true);
-        fetch("https://open.rocket.chat/api/v1/login", {
+        fetch(API_URL + "/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
