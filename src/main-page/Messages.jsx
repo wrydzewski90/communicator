@@ -22,16 +22,16 @@ function Messages({
                 .then(response => {
                     setMessages(response.messages)
                 });
-        }, [channelId])
+        }, [channelId, token, userId])
     return (
         <div>
-            Current channel: 
-            {channelId}
-            {messages.map((message) => (
-            <div>
-                {message.u.name} : {message.msg}
-            </div>))}
-        </div>
+      {channelId}
+      {messages ? messages.map((message) => (
+        <div>
+          {message.u.name} : {message.msg}
+        </div> 
+      )) : "Choose channel"}
+    </div>
     )
 }
 

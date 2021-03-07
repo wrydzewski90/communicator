@@ -4,18 +4,18 @@ import ChannelsList from "./ChannelsList";
 import Messages from "./Messages";
 
 
-function MainPage({userData}) {
-    const [currentChannelId, setCurrentChannelId] = useState(null)
-  
+function MainPage({ userData }) {
+  const [currentChannelId, setCurrentChannelId] = useState(null)
+
   return (
     <div className={styles.container}>
       <div className={styles.channelsList}>
-        <ChannelsList 
-        token={userData.authToken} 
-        userId={userData.userId} 
-        name={userData.me.name}
-        setCurrentChannelId={setCurrentChannelId}
-        currentChannelId={currentChannelId}
+        <ChannelsList
+          token={userData.authToken}
+          userId={userData.userId}
+          name={userData.me.name}
+          setCurrentChannelId={setCurrentChannelId}
+          currentChannelId={currentChannelId}
         />
       </div>
       <div className={styles.rightSide}>
@@ -25,8 +25,8 @@ function MainPage({userData}) {
           <div className={styles.bottom}></div>
         </div>
         <div className={styles.messagesField}>
-          <Messages 
-            channelId={currentChannelId} 
+          <Messages
+            channelId={currentChannelId}
             token={userData.authToken}
             userId={userData.userId}
           />
@@ -40,7 +40,7 @@ function MainPage({userData}) {
           />
         </div>
       </div>
-      </div>
+    </div>
 
 
 
