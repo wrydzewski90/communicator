@@ -15,7 +15,7 @@ body {
   align-items: center;
   display: flex;
 
-  .leftSide {
+  .channelsList {
     height: 100%;
     width: 220px;
     background-color: #3f103f;
@@ -27,10 +27,6 @@ body {
     text-align: left;
     color: white;
     padding-left: 15px;
-
-    .channels {
-      padding-left: 15px;
-    }
   }
 
   .rightSide {
