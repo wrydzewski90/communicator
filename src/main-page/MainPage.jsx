@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styles from "./MainPage.module.scss";
 import ChannelsList from "./ChannelsList";
 import Messages from "./Messages";
-
+import Header from "./Header";
 
 function MainPage({ userData }) {
-  const [currentChannelId, setCurrentChannelId] = useState(null)
+  const [currentChannel, setCurrentChannel] = useState(null);
 
   return (
     <div className={styles.container}>
@@ -14,22 +14,27 @@ function MainPage({ userData }) {
           token={userData.authToken}
           userId={userData.userId}
           name={userData.me.name}
-          setCurrentChannelId={setCurrentChannelId}
-          currentChannelId={currentChannelId}
+          setCurrentChannel={setCurrentChannel}
+          currentChannel={currentChannel}
         />
       </div>
       <div className={styles.rightSide}>
         <div className={styles.header}>
           <div className={styles.top}>
+            {currentChannel ? (
+              <Header channelName={currentChannel.name} />
+            ) : null}
           </div>
           <div className={styles.bottom}></div>
         </div>
         <div className={styles.messagesField}>
-          <Messages
-            channelId={currentChannelId}
-            token={userData.authToken}
-            userId={userData.userId}
-          />
+          {currentChannel ? (
+            <Messages
+              channelId={currentChannel.id}
+              token={userData.authToken}
+              userId={userData.userId}
+            />
+          ) : null}
         </div>
         <div className={styles.typeField}>
           <input
@@ -41,9 +46,6 @@ function MainPage({ userData }) {
         </div>
       </div>
     </div>
-
-
-
   );
 }
 
