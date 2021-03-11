@@ -1,6 +1,7 @@
 import { useState } from "react";
-import styles from"./loginPage.module.scss";
-import {API_URL} from "../api.js";
+import styles from "./loginPage.module.scss";
+import { API_URL } from "../api.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function LoginPage({ onSucces }) {
     const [username, setUsername] = useState("");
@@ -25,16 +26,13 @@ function LoginPage({ onSucces }) {
             })
             .then((response) => {
                 if (response.status === "error") {
-                    console.log(response.error);
                     setError(response.error);
-                }
-
-                if (response.status === "success") {
+                } else if (response.status === "success") {
                     onSucces(response.data);
                 }
 
                 setLoading(false);
-            });    
+            });
     };
 
     return (
@@ -55,7 +53,6 @@ function LoginPage({ onSucces }) {
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                             />
-
                             <input
                                 type="password"
                                 placeholder="Password"
@@ -64,22 +61,33 @@ function LoginPage({ onSucces }) {
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
                             />
-
                             <div
                                 onClick={() => login()}
                                 type="submit"
                                 name="login"
                                 className={styles.loginButton}
                             >
-                                login
+                                {loading ? (
+                                    <span className={styles.spinner}>
+                                        <FontAwesomeIcon icon="spinner" />
+                                    </span>
+                                ) : (
+                                    <span>login</span>
+                                )}
                             </div>
-                            {loading && <div>Loading...</div>}
-                            {error && <div>{error}</div>}
                         </div>
                     </form>
+
                     <div className={styles.rememberWrapper}>
+                        {error ? (
+                            <div className={styles.error}>
+                                incorrect username or password
+                            </div>
+                        ) : null}
                         <span className={styles.forgot}>forgot </span>
-                        <span className={styles.userpass}>username / password?</span>
+                        <span className={styles.userpass}>
+                            username / password?
+                        </span>
                     </div>
                 </div>
             </div>
