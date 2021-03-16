@@ -41,60 +41,64 @@ function LoginPage({ onSucces }) {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.main}>
-        <div className={styles.leftSide}>
-          <div className={styles.image}></div>
-        </div>
-        <div className={styles.rightSide}>
-          <form>
-            <p className={styles.loginTitle}>member login</p>
-            <div className={styles.inputWrapper}>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                className={styles.loginEmail}
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-
-              <input
-                type="password"
-                placeholder="Password"
-                className={styles.loginPassword}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                onKeyDown={handleKeyDown}
-              />
-              <div
-                onClick={() => login()}
-                type="submit"
-                name="login"
-                className={styles.loginButton}
-              >
-                {loading ? (
-                  <span className={styles.spinner}>
-                    <FontAwesomeIcon icon="spinner" />
-                  </span>
-                ) : (
-                  <span>login</span>
-                )}
+      <div className={styles.container}>
+          <div className={styles.main}>
+              <div className={styles.leftSide}>
+                  <div className={styles.image}></div>
               </div>
-            </div>
-          </form>
+              <div className={styles.rightSide}>
+                  <form>
+                      <p className={styles.loginTitle}>member login</p>
+                      <div className={styles.inputWrapper}>
+                          <input
+                              type="email"
+                              name="email"
+                              placeholder="Email"
+                              className={styles.loginEmail}
+                              value={username}
+                              onChange={(e) => setUsername(e.target.value)}
+                          />
 
-          <div className={styles.rememberWrapper}>
-            {error ? (
-              <div className={styles.error}>incorrect username or password</div>
-            ) : null}
-            <span className={styles.forgot}>forgot </span>
-            <span className={styles.userpass}>username / password?</span>
+                          <input
+                              type="password"
+                              placeholder="Password"
+                              className={styles.loginPassword}
+                              value={password}
+                              onChange={(e) => setPassword(e.target.value)}
+                              required
+                              onKeyDown={handleKeyDown}
+                          />
+                          <div
+                              onClick={() => login()}
+                              type="submit"
+                              name="login"
+                              className={styles.loginButton}
+                          >
+                              {loading ? (
+                                  <span className={styles.spinner}>
+                                      <FontAwesomeIcon icon="spinner" />
+                                  </span>
+                              ) : (
+                                  <span>login</span>
+                              )}
+                          </div>
+                      </div>
+                  </form>
+                 
+                  <div className={styles.rememberWrapper}>
+                      {error ? (
+                          <div className={styles.error}>
+                              incorrect username or password
+                          </div>
+                      ) : null}
+                      <span className={styles.forgot}>forgot </span>
+                      <span className={styles.userpass}>
+                          username / password?
+                      </span>
+                  </div>
+              </div>
           </div>
-        </div>
       </div>
-    </div>
   );
 }
 
