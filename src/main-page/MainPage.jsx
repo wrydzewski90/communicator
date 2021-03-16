@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styles from "./MainPage.module.scss";
-import ChannelsList from "./ChannelsList";
-import Messages from "./Messages";
+import ChannelsList from "./channels/ChannelsList";
+import Messages from "./messages/Messages";
 import Header from "./Header";
+import MessagesInput from "./messages/MessagesInput";
 
 function MainPage({ userData }) {
   const [currentChannel, setCurrentChannel] = useState(null);
@@ -27,23 +28,13 @@ function MainPage({ userData }) {
           </div>
           <div className={styles.bottom}></div>
         </div>
-        <div className={styles.messagesField}>
-          {currentChannel ? (
-            <Messages
-              channelId={currentChannel.id}
-              token={userData.authToken}
-              userId={userData.userId}
-            />
-          ) : null}
-        </div>
-        <div className={styles.typeField}>
-          <input
-            type="text"
-            name="typeMessage"
-            placeholder="Send message"
-            className={styles.typeMessage}
+        {currentChannel ? (
+          <Messages
+            channelId={currentChannel.id}
+            token={userData.authToken}
+            userId={userData.userId}
           />
-        </div>
+        ) : null}
       </div>
     </div>
   );
