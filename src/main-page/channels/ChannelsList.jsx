@@ -34,11 +34,12 @@ function ChannelsList({
       <h3>Channels list:</h3>
       {channelsList.map((channel) => (
         <div
-          className={
-            currentChannel && currentChannel.id === channel._id
-              ? styles.light
-              : ""
-          }
+          className={`${styles.channel}  
+            ${
+              currentChannel && currentChannel.id === channel._id
+                ? styles.light
+                : ""
+            }`}
           key={channel._id}
           onClick={() =>
             setCurrentChannel({
