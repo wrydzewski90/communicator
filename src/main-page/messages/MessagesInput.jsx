@@ -7,7 +7,8 @@ function MessagesInput({ token, userId, channelId, getMessages }) {
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      sendMessage();
+      event.preventDefault();
+      message && sendMessage();
     }
   };
 
@@ -29,14 +30,13 @@ function MessagesInput({ token, userId, channelId, getMessages }) {
     });
   };
   return (
-    <div>
-      <textarea
-        className={style.test}
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        onKeyDown={handleKeyDown}
-      />
-    </div>
+    <textarea
+      placeholder="Type a message"
+      className={style.test}
+      value={message}
+      onChange={(e) => setMessage(e.target.value)}
+      onKeyDown={handleKeyDown}
+    />
   );
 }
 

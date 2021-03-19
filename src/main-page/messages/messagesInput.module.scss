@@ -1,9 +1,12 @@
-.test{
-    height: 50px;
-    width: 100%;
-    border-radius: 15px;
-    border: 1px solid gray;
-    margin: 10px;
-    background-color: white;
-    overflow-wrap: normal;
+.test {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid gray;
+  margin: 10px 20px 10px 20px;
+  padding: 10px;
+  background-color: white;
+  overflow-wrap: break-word;
+  resize: none;
+  outline: none;
 }
