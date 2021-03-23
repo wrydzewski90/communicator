@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { API_URL } from "../../Api";
+import UserDataContext from "../../context";
 import styles from "./ChannelsList.module.scss";
 
-function ChannelsList({
-  token,
-  userId,
-  name,
-  currentChannel,
-  setCurrentChannel,
-}) {
+function ChannelsList({ currentChannel, setCurrentChannel }) {
   const [channelsList, setChannelsList] = useState([]);
+  const userData = useContext(UserDataContext);
+  const { authToken: token, userId, name = userData.me.name } = userData;
 
   useEffect(() => {
     fetch(API_URL + "/channels.list.joined", {

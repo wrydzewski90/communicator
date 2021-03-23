@@ -1,10 +1,13 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { API_URL } from "../../Api";
 import MessagesInput from "./MessagesInput";
 import style from "./messages.module.scss";
+import UserDataContext from "../../context";
 
-function Messages({ channelId, token, userId }) {
+function Messages({ channelId }) {
   const [messages, setMessages] = useState([]);
+  const userData = useContext(UserDataContext);
+  const { authToken: token, userId } = userData;
 
   const getMessages = useCallback(() => {
     fetch(API_URL + `/channels.messages?roomId=${channelId}`, {
@@ -37,12 +40,7 @@ function Messages({ channelId, token, userId }) {
           : null}
       </div>
       <div className={style.typeField}>
-        <MessagesInput
-          token={token}
-          userId={userId}
-          channelId={channelId}
-          getMessages={getMessages}
-        />
+        <MessagesInput channelId={channelId} getMessages={getMessages} />
       </div>
     </>
   );

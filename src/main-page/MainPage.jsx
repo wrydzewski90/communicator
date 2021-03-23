@@ -12,9 +12,6 @@ function MainPage({ userData }) {
     <div className={styles.container}>
       <div className={styles.channelsList}>
         <ChannelsList
-          token={userData.authToken}
-          userId={userData.userId}
-          name={userData.me.name}
           setCurrentChannel={setCurrentChannel}
           currentChannel={currentChannel}
         />
@@ -28,13 +25,7 @@ function MainPage({ userData }) {
           </div>
           <div className={styles.bottom}></div>
         </div>
-        {currentChannel ? (
-          <Messages
-            channelId={currentChannel.id}
-            token={userData.authToken}
-            userId={userData.userId}
-          />
-        ) : null}
+        {currentChannel ? <Messages channelId={currentChannel.id} /> : null}
       </div>
     </div>
   );
