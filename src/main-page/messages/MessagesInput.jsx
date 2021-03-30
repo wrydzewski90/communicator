@@ -1,12 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { API_URL } from "../../Api";
-import UserDataContext from "../../context";
 import style from "./messagesInput.module.scss";
 
 function MessagesInput({ channelId, getMessages }) {
   const [message, setMessage] = useState("");
-  const userData = useContext(UserDataContext);
-  const { authToken: token, userId } = userData;
+  const userData = useSelector((state) => state.userData);
+  const { token, userId } = userData;
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {

@@ -40,24 +40,13 @@ body {
   }
 
   .header {
-    width: 100%;
-    background-color: chartreuse;
-
-    .top {
-      height: 60px;
-      padding: 10px;
-      background-color: #7407a3;
-      font-size: 18px;
-      font-weight: 700;
-      text-align: left;
-      text-transform: capitalize;
-      color: rgb(233, 227, 227);
-    }
-
-    .bottom {
-      height: 35px;
-      background-color: #78a300;
-    }
+    height: 60px;
+    padding: 10px;
+    background-color: #7407a3;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    text-transform: capitalize;
+    color: rgb(233, 227, 227);
   }
-  
 }
