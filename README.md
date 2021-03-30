@@ -1,5 +1,4 @@
-You can view this website here https://wrydzewski90.github.io/communicator/
-
+This project is a web app that allows to communicate between people, based on open.rocket.chat API: https://docs.rocket.chat/api/rest-api
 
 
 
