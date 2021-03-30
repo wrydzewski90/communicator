@@ -1,7 +1,7 @@
 You can view this website here https://wrydzewski90.github.io/communicator/
 
 
-
+![1](https://user-images.githubusercontent.com/57176807/112981906-1af1b900-915c-11eb-869b-1ebb4f8fdc59.png)
 
 
 # Getting Started with Create React App
