@@ -1,4 +1,5 @@
 This project is a web app that allows to communicate between people, based on open.rocket.chat API: https://docs.rocket.chat/api/rest-api
+You can test this app using following login data: E-mail: "communicator2021dev@gmail.com" Password "testcommunicator"
 
 
 
