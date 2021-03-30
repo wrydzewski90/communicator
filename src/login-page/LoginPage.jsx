@@ -2,8 +2,11 @@ import { useState } from "react";
 import styles from "./loginPage.module.scss";
 import { API_URL } from "../Api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { setUserData } from "../store/reducer";
+import { useDispatch } from "react-redux";
 
-function LoginPage({ onSucces }) {
+function LoginPage() {
+  const dispatch = useDispatch();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -27,10 +30,9 @@ function LoginPage({ onSucces }) {
       .then((response) => {
         if (response.status === "error") {
           setError(response.error);
-        } else if (response.status === "success") {
-          onSucces(response.data);
+        } else {
+          dispatch(setUserData(response.data));
         }
-
         setLoading(false);
       });
   };

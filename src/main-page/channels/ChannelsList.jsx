@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { API_URL } from "../../Api";
-import UserDataContext from "../../context";
 import styles from "./ChannelsList.module.scss";
 
 function ChannelsList({ currentChannel, setCurrentChannel }) {
   const [channelsList, setChannelsList] = useState([]);
-  const userData = useContext(UserDataContext);
-  const { authToken: token, userId, name = userData.me.name } = userData;
+  const userData = useSelector((state) => state.userData);
+  const { token, userId, name } = userData;
 
   useEffect(() => {
     fetch(API_URL + "/channels.list.joined", {
@@ -21,7 +21,14 @@ function ChannelsList({ currentChannel, setCurrentChannel }) {
         return response.json();
       })
       .then((response) => {
-        setChannelsList(response.channels);
+        const channels = response.channels;
+        setChannelsList(channels);
+        if (channels[0]) {
+          setCurrentChannel({
+            id: channels[0]._id,
+            name: channels[0].name,
+          });
+        }
       });
   }, []);
 

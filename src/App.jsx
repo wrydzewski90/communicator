@@ -1,20 +1,15 @@
 import LoginPage from "./login-page/LoginPage.jsx";
 import MainPage from "./main-page/MainPage.jsx";
-import { useState } from "react";
 import "./login-page/fontawesome";
-import UserDataContext from "./context";
+import { useSelector } from "react-redux";
 
 function App() {
-  const [userData, setUserData] = useState(null);
+  const token = useSelector((state) => state.userData.token);
 
-  if (userData) {
-    return (
-      <UserDataContext.Provider value={userData}>
-        <MainPage />
-      </UserDataContext.Provider>
-    );
+  if (token) {
+    return <MainPage />;
   } else {
-    return <LoginPage onSucces={setUserData} />;
+    return <LoginPage />;
   }
 }
 export default App;

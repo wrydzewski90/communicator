@@ -1,13 +1,13 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { API_URL } from "../../Api";
 import MessagesInput from "./MessagesInput";
 import style from "./messages.module.scss";
-import UserDataContext from "../../context";
+import { useSelector } from "react-redux";
 
 function Messages({ channelId }) {
   const [messages, setMessages] = useState([]);
-  const userData = useContext(UserDataContext);
-  const { authToken: token, userId } = userData;
+  const userData = useSelector((state) => state.userData);
+  const { token, userId } = userData;
 
   const getMessages = useCallback(() => {
     fetch(API_URL + `/channels.messages?roomId=${channelId}`, {
