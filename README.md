@@ -1,4 +1,7 @@
-You can view this website here https://wrydzewski90.github.io/communicator/
+This project is a web app that allows to communicate between people, based on open.rocket.chat API: https://docs.rocket.chat/api/rest-api
+You can test this app using following login data: E-mail: "communicator2021dev@gmail.com" Password "testcommunicator"
+
+![1](https://user-images.githubusercontent.com/57176807/112986929-6c9d4200-9162-11eb-9e87-d94c87bbb03f.png)
 
 
 
