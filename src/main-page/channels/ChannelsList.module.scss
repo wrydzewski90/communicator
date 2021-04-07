@@ -1,9 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
 .channel {
   margin-top: 10px;
+  cursor: pointer;
 }
 .name {
   padding-top: 20px;
 }
 .light {
   background-color: #641264c7;
+}
+
+.addNewChannelButton {
+  margin-top: 50px;
+  margin-right: 5px;
+  outline: none;
+  background-color: #641264c7;
+  border: none;
+  border-radius: 7px;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.channelInput {
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  border: none;
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+.cross {
+  background-color: #5a175a;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 8px;
+  color: #e9e3e3;
 }

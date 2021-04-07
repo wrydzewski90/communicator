@@ -22,7 +22,9 @@ function Messages({ channelId }) {
         return response.json();
       })
       .then((response) => {
-        setMessages(response.messages.reverse());
+        response &&
+          response.messages &&
+          setMessages(response.messages.reverse());
       });
   }, [channelId, token, userId]);
   useEffect(() => {
